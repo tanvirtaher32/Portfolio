@@ -45,6 +45,7 @@
 body{
     min-height: 100vh;
     background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));
+    background-attachment: fixed;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -107,6 +108,27 @@ section{
     align-items: center;
 }
 
+.hidden{
+    display: none !important;
+}
+
+/* section title */
+
+.section-title{
+    
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2{
+    font-size:40px;
+    text-transform: capitalize;
+}
+.section-padding{
+    padding: 80px 0;
+}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar{
@@ -121,6 +143,11 @@ section{
 
 
 /* Button */
+button{
+    font-family: inherit;
+    user-select: none;
+}
+
 .btn{
     line-height: 1.5;
     background-color: var(--white-alpha-25);
@@ -216,4 +243,100 @@ section{
 .home-img .img-box img {
     width: 100%;
     border-radius: 50%;
+}
+
+
+/* -------------------
+    About section
+---------------------- */
+.about-img {
+    
+    width: 40%;
+    padding: 0 15px;
+}
+
+.about-text {
+    
+    width: 60%;
+    padding: 0 15px;
+}
+
+.about-img .img-box{
+    background-color: var(--white-alpha-25);
+    max-width: 380px;
+    border: 1px solid var(--white-alpha-40);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.about-img .img-box img {
+    width: 100%;
+}
+
+.about-text h3{
+    font-size:20px;
+    margin: 20px 0;
+    text-transform:capitalize;
+}
+
+.about-text .skills{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.about-text .skill-item{
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    padding: 5px 15px;
+    text-transform:capitalize;
+    margin: 0 10px 10px 0;
+    border-radius:10px
+}
+
+.about-tabs{
+    margin-top:20px;
+}
+.about-tabs .tab-item {
+    padding: 2px 0;
+    background-color:transparent;
+    border: none;
+    text-transform: capitalize;
+    display: inline-block;
+    color: var(--blue-dark);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.about-tabs .tab-item:last-child{
+    margin: 0;
+}
+.about-tabs .tab-item::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height:1px;
+    background-color: var(--blue-dark);
+    transition: width 0.3s ease;
+}
+
+.about-tabs .tab-item:hover::before{
+    width: 100%;
+    
+}
+.about-tabs .tab-item.active::before{
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.about-tabs .tab-item.active{
+    color: var(--main-color);
+    opacity: 1;
+    cursor: auto;
 }
